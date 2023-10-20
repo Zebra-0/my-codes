@@ -1,0 +1,90 @@
+{
+    "screen": {
+        "min-x":600,
+        "max-x": 600,
+        "min-y": 500,
+        "max-y": 500,
+        "theme": {
+            "equilux": "equilux.TFrame"
+        }
+    },
+    "layout": {
+        "Padrao": {
+            "x": 30,
+            "y": 5,
+            "xentry": 160,
+            "entry-width": 80
+        },
+        "Nota Fiscal": {
+            "x": 30,
+            "y": 35,
+            "xentry": 160,
+            "entry-width": 80
+        },
+        "Encaixe/Retorno": {
+            "x": 30,
+            "y": 5,
+            "xentry": 160,
+            "entry-width": 80
+        },
+        "Encaixe de Consulta": {
+            "x": 30,
+            "y": 5,
+            "xentry": 160,
+            "entry-width": 80
+        },
+        "Atraso": {
+            "x": 30,
+            "y": 5,
+            "xentry": 160,
+            "entry-width": 160
+        }
+    },
+    "botoes" : {
+        "salvar": {
+                "x": 30,
+                "y": 315
+            } ,
+        "escolher-pasta": {
+            "x":30,
+            "y": 285
+            }  ,
+        "limpar": {
+            "x":30,
+            "y": 345
+            } ,
+        "copiar": {
+            "x":30,
+            "y": 255
+            },
+        "solicitacao": {
+            "x":30,
+            "y": 405
+            }
+},
+    "pacientes": {
+        "layout": "Padrao"
+    },
+    "aniversario": {
+        "layout": "Padrao"
+    },
+    "tel": {
+        "layout": {
+            "x": 285,
+            "y": 5,
+            "xentry": 325
+        }
+    },
+    "email": {
+        "layout": "Padrao"
+    },
+    "dataprocediemnto": {
+        "layout": "Padrao"
+    },
+    "procedimento": {
+        "layout": "Padrao"
+    },
+    "profissional": {
+        "layout": "Padrao"
+    }
+}
