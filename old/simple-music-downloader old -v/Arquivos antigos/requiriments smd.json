@@ -1,0 +1,101 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "D:/Users/remote/PycharmProjects/Goals/interface_SMD049.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": true
+  },
+  {
+   "optionDest": "console",
+   "value": false
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "D:/Users/remote/PycharmProjects/Goals/imagens/icon.ico"
+  },
+  {
+   "optionDest": "name",
+   "value": "Simple Music Downloader 0.49 Stable"
+  },
+  {
+   "optionDest": "ascii",
+   "value": false
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "embed_manifest",
+   "value": true
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "win_private_assemblies",
+   "value": false
+  },
+  {
+   "optionDest": "win_no_prefer_redirects",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "argv_emulation",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/Users/remote/PycharmProjects/Goals/presets.json;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/Users/remote/PycharmProjects/Goals/simpleMusicDownloader.py;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/Users/remote/PycharmProjects/Goals/imagens;imagens/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/Users/remote/PycharmProjects/Goals/imagens/icon.ico;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/Users/remote/PycharmProjects/Goals/webscraper.py;."
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}
