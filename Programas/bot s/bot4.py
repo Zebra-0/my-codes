@@ -58,7 +58,7 @@ class Comandos():
         '''retorna os dados do json especificado.'''
         with open(nome_arquivo, 'r') as trabalhos:
             dados = json.load(trabalhos)
-        return  dados
+        return dados
     def abrir_chrome(self, anonimo=True):
         '''Coloque False para abrir a janela normal.'''
         try:
