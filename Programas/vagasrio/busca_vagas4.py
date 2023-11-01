@@ -1,3 +1,4 @@
+import ftfy
 import requests
 import time
 import json
@@ -24,7 +25,7 @@ def links_in_html(link, filtro=None):
             else:
                 resultados.append(url)
     return resultados
-def resumir(html):
+def resumir(html, max_words=16):
     """Pega o HTML da página e resume a descrição e o link de candidatura."""
     # vagas = links_in_html(link, filtro='/vagasrio/')
     # vaga = get_html(vagas[0])# até aqui é apenas para teste
@@ -44,7 +45,20 @@ def resumir(html):
     descricao = descricao.replace('</p><p>','\n')
     descricao = descricao.replace('<br/>','\n')
     descricao = descricao.replace('</p></div><p>','\n')
-    #print(descricao)
+    descricao = descricao.replace('\n\n','\n')
+    linhas = descricao.split('\n')
+    descricao = ftfy.fix_text(descricao)  # corrige possiveis erros no texto, tipo utf-8
+
+    linhas_processadas = []
+
+    for linha in linhas:
+        palavras = linha.split()
+        if len(palavras) > max_words:
+            grupos = [palavras[i:i + max_words] for i in range(0, len(palavras), max_words)]
+            for grupo in grupos:
+                linhas_processadas.append(' '.join(grupo))
+        else:
+            linhas_processadas.append(linha)
     resumo = [link_vaga, descricao]
     return resumo
 def vagas_from_page(link):
@@ -55,10 +69,24 @@ def vagas_from_page(link):
     for vaga in vagas:
         #print(f'vaga:{vaga}')
         conteudo = get_html(vaga)
+        #print(conteudo)
+        data_horafinder = conteudo.find('>Publicado em  ')
+        data_horafinder = conteudo[data_horafinder+len('>Publicado em  '):]
+        data_horafinder2 = data_horafinder.find('</time>')
+        data_hora = data_horafinder[:data_horafinder2]
+        findsalario0 = 'class="salary">'
+        findsalario2 = '</li></ul><div'
+        findsalario = conteudo.find(findsalario0)
+        findsalario = conteudo[findsalario+len(findsalario0):]
+        findsalario2 = findsalario.find(findsalario2)
+        salario = findsalario[:findsalario2]
         resumo = resumir(conteudo)
         dados[num_vaga] = {"link_vaga": vaga,
                            "link_candidatura": resumo[0],
-                           "descricao": resumo[1]}
+                           "descricao": resumo[1],
+                           "data-hora": data_hora,
+                           "salario": salario
+                           }
         num_vaga += 1
     return dados
 def trabalhos(qnt_paginas=10):
@@ -94,6 +122,7 @@ def save_json(nome_arquivo, conteudo):
     with open(nome_arquivo, 'w', encoding="utf-8") as f:
         json.dump(conteudo, f, indent=4)
 
+#print(get_html('https://rjempregos.net/vagasrio/desenvolvedor-php-pleno-superlogica-tecnologias-home-office/'))
 #background_trabalhos()
 #vagas = read_json("vagasrio.json")
 #print(len(vagas["1"]))
